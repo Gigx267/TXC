@@ -1,0 +1,857 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TXC | Online Store</title>
+  <link rel="icon" type="image/png" href="P (2).jpeg">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Major+Mono+Display&family=Share+Tech+Mono&family=Syncopate:wght@700&display=swap" rel="stylesheet">
+  <style>
+   
+    .collection-section {
+      background: var(--cyber-black);
+      border-top: 2px solid var(--cyber-blue);
+      border-bottom: 2px solid var(--cyber-blue);
+      padding: 50px 0 60px 0;
+      margin: 40px 0 0 0;
+    }
+
+    .collection-section h2 {
+      text-align: center;
+      color: var(--neon-red);
+      font-family: 'Syncopate', sans-serif;
+      font-size: 2.5rem;
+      margin-bottom: 30px;
+      letter-spacing: 3px;
+      text-shadow: 0 0 12px var(--neon-red);
+    }
+
+    .products-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+      gap: 32px;
+      max-width: 1240px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    .product-card {
+      background: var(--cyber-gray);
+      border: 1px solid var(--cyber-blue);
+      border-radius: 8px;
+      box-shadow: 0 2px 12px rgba(0,245,255,0.08);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 26px 20px 18px 20px;
+      position: relative;
+      overflow: hidden;
+      transition: transform 0.22s, box-shadow 0.22s;
+    }
+
+    .product-card:hover {
+      transform: translateY(-7px) scale(1.03);
+      box-shadow: 0 8px 32px rgba(255, 10, 84, 0.22);
+    }
+
+    .product-card .corner-decoration {
+      width: 16px;
+      height: 16px;
+    }
+
+    .product-card img {
+      width: 100%;
+      max-width: 210px;
+      max-height: 210px;
+      object-fit: cover;
+      margin-bottom: 18px;
+      border: 1px solid var(--cyber-blue);
+      border-radius: 3px;
+      background: #0d0d12;
+      transition: filter 0.3s;
+    }
+
+    .product-card .product-title {
+      font-family: 'Orbitron', sans-serif;
+      color: var(--neon-red);
+      font-size: 1.1rem;
+      margin-bottom: 6px;
+      text-align: center;
+    }
+
+    .product-card .product-desc {
+      color: #fff;
+      font-size: 0.98rem;
+      margin-bottom: 16px;
+      text-align: center;
+      min-height: 48px;
+    }
+
+    .product-card .product-price {
+      color: var(--cyber-blue);
+      font-size: 1rem;
+      font-weight: bold;
+      margin-bottom: 18px;
+      text-shadow: 0 0 5px var(--cyber-blue);
+    }
+
+    .product-card .buy-btn {
+      background: linear-gradient(90deg, var(--neon-red), var(--cyber-blue));
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      padding: 10px 32px;
+      font-family: 'Syncopate', sans-serif;
+      font-size: 1rem;
+      letter-spacing: 2px;
+      cursor: pointer;
+      transition: background 0.2s, box-shadow 0.25s;
+      text-shadow: 0 0 6px var(--neon-red);
+      box-shadow: 0 0 9px var(--bento-glow);
+    }
+
+    .product-card .buy-btn:hover {
+      background: linear-gradient(90deg, var(--cyber-blue), var(--neon-red));
+      color: #fff;
+      box-shadow: 0 0 20px var(--neon-red), 0 0 12px var(--cyber-blue);
+      text-shadow: 0 0 12px var(--cyber-blue);
+    }
+
+    @media (max-width: 700px) {
+      .collection-section h2 {
+        font-size: 1.6rem;
+      }
+      .products-list {
+        padding: 0 6px;
+        gap: 18px;
+      }
+      .product-card {
+        padding: 17px 7px 11px 7px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="glitch" data-text="TXC">
+    <div class="menu-toggle" id="mobile-menu">
+      <div class="bar"></div>
+      <div class="bar"></div>
+      <div class="bar"></div>
+    </div>
+    TXC
+  </header>
+
+  <nav id="main-nav">
+     <a href="Index.html">HOME</a>
+    <a href="collection.html">COLLECTIONS</a>
+    <a href="collection.html">SHOP</a>
+   
+    <a href="about.html">ABOUT</a>
+    <a href="contact.html">Contact Us </a>
+  </nav>
+
+  
+  <!-- NEW COLLECTION SECTION -->
+  <section class="collection-section" id="new-collection">
+    <h2>2025 New Clothing Collection</h2>
+    <div class="products-list">
+      <!-- Example product cards. Replace/duplicate with actual data. -->
+      <div class="product-card">
+        <img src="https://pxpwave.com/cdn/shop/files/A2151648-D302-439B-BC8C-49C7DD62D0AA_540x.png?v=1739105998" alt="Neo-Futurist Bomber Jacket">
+        <div class="product-title">Neo-Futurist Bomber Jacket</div>
+        <div class="product-desc">A statement piece featuring cyberpunk-inspired paneling, neon highlights, and waterproof technical fabric. Unisex fit.</div>
+        <div class="product-price">$180.00</div>
+        <button class="buy-btn">Buy</button>
+        <div class="corner-decoration top-left"></div>
+        <div class="corner-decoration top-right"></div>
+        <div class="corner-decoration bottom-left"></div>
+        <div class="corner-decoration bottom-right"></div>
+      </div>
+      <div class="product-card">
+        <img src="https://pxpwave.com/cdn/shop/files/0A914A03-9D98-4DEC-B0B4-63A69170F38F_540x.png?v=1739106326 " alt="Glitchcore Oversized Hoodie">
+        <div class="product-title">Glitchcore Oversized Hoodie</div>
+        <div class="product-desc">Soft brushed cotton-blend hoodie with neon glitch graphics and kangaroo pocket. Limited edition drop.</div>
+        <div class="product-price">$120.00</div>
+        <button class="buy-btn">Buy</button>
+        <div class="corner-decoration top-left"></div>
+        <div class="corner-decoration top-right"></div>
+        <div class="corner-decoration bottom-left"></div>
+        <div class="corner-decoration bottom-right"></div>
+      </div>
+      <div class="product-card">
+        <img src="https://pxpwave.com/cdn/shop/files/BA531720-2FEF-40D4-8A59-30A65C6E9046_540x.png?v=1739105903 " alt="Techno Utility Cargo Pants">
+        <div class="product-title">Techno Utility Cargo Pants</div>
+        <div class="product-desc">Multi-pocket cargo in jet black with reflective accents and adjustable straps. For street or rave.</div>
+        <div class="product-price">$130.00</div>
+        <button class="buy-btn">Buy</button>
+        <div class="corner-decoration top-left"></div>
+        <div class="corner-decoration top-right"></div>
+        <div class="corner-decoration bottom-left"></div>
+        <div class="corner-decoration bottom-right"></div>
+      </div>
+      <div class="product-card">
+        <img src="https://pxpwave.com/cdn/shop/files/9E93E65A-CCF3-4C9C-A1E4-52D56D804C1A_540x.png?v=1739106785 " alt="Hologram Logo Tee">
+        <div class="product-title">Hologram Logo Tee</div>
+        <div class="product-desc">Premium cotton T-shirt with holographic TXC chest logo and sleeve patch. Regular fit.</div>
+        <div class="product-price">$55.00</div>
+        <button class="buy-btn">Buy</button>
+        <div class="corner-decoration top-left"></div>
+        <div class="corner-decoration top-right"></div>
+        <div class="corner-decoration bottom-left"></div>
+        <div class="corner-decoration bottom-right"></div>
+      </div>
+      <div class="product-card">
+        <img src="https://pxpwave.com/cdn/shop/files/B72777B8-71DA-4E75-9287-215D51556E8F_540x.png?v=1727267102" alt="Cyber Grid Mini Skirt">
+        <div class="product-title">Cyber Grid Mini Skirt</div>
+        <div class="product-desc">Stretch mini skirt with grid print, zipper detail, and a high-rise fit. Futuristic and bold.</div>
+        <div class="product-price">$70.00</div>
+        <button class="buy-btn">Buy</button>
+        <div class="corner-decoration top-left"></div>
+        <div class="corner-decoration top-right"></div>
+        <div class="corner-decoration bottom-left"></div>
+        <div class="corner-decoration bottom-right"></div>
+      </div>
+   
+      <div class="product-card">
+        <img src="https://pxpwave.com/cdn/shop/files/IMG-5783_540x.png?v=1727275231 " alt="Sonic Mesh Dress">
+        <div class="product-title">Sonic Mesh Dress</div>
+        <div class="product-desc">Bodycon mesh dress with iridescent inserts and thumbhole sleeves. Breathable and bold.</div>
+        <div class="product-price">$95.00</div>
+        <button class="buy-btn">Buy</button>
+        <div class="corner-decoration top-left"></div>
+        <div class="corner-decoration top-right"></div>
+        <div class="corner-decoration bottom-left"></div>
+        <div class="corner-decoration bottom-right"></div>
+      </div>
+         <div class="product-card">
+        <img src="https://pxpwave.com/cdn/shop/files/IMG-5703_540x.png?v=1727266785" alt="Pulsewave Snapback Cap">
+        <div class="product-title">Pulsewave Snapback Cap</div>
+        <div class="product-desc">Structured snapback with embroidered logo, neon piping, and adjustable fit. Night-out ready.</div>
+        <div class="product-price">$38.00</div>
+        <button class="buy-btn">Buy</button>
+        <div class="corner-decoration top-left"></div>
+        <div class="corner-decoration top-right"></div>
+        <div class="corner-decoration bottom-left"></div>
+        <div class="corner-decoration bottom-right"></div>
+      </div>
+      <div class="product-card">
+        <img src="https://pxpwave.com/cdn/shop/products/image_e9373f0f-ec55-4be6-bd1f-9cf27ace2704_540x.png?v=1673698552" alt="Reflector Tech Vest">
+        <div class="product-title">Reflector Tech Vest</div>
+        <div class="product-desc">Multi-utility vest with ultra-bright reflective panels and magnetic closures. Layer over any look.</div>
+        <div class="product-price">$110.00</div>
+        <button class="buy-btn">Buy</button>
+        <div class="corner-decoration top-left"></div>
+        <div class="corner-decoration top-right"></div>
+        <div class="corner-decoration bottom-left"></div>
+        <div class="corner-decoration bottom-right"></div>
+      </div>
+      <!-- Add more product-cards as needed -->
+    </div>
+  </section>
+  <!-- END NEW COLLECTION SECTION -->
+
+  <footer>
+    <p>© 2025 TXC | STYLE X CULTURE</p>
+    <p>ALL SYSTEMS OPERATIONAL</p>
+    <div class="social-links">
+      <a href="#">⏵</a>
+      <a href="#">⏷</a>
+      <a href="#">⏶</a>
+      <a href="#">⏴</a>
+    </div>
+  </footer>
+
+  <script>
+    // Mobile menu toggle
+    const menuToggle = document.getElementById('mobile-menu');
+    const nav = document.getElementById('main-nav');
+
+    menuToggle.addEventListener('click', () => {
+      nav.classList.toggle('active');
+      menuToggle.classList.toggle('active');
+    });
+
+    // Add glitch effect to bento cells randomly
+    const cells = document.querySelectorAll('.bento-cell');
+    setInterval(() => {
+      const randomCell = cells[Math.floor(Math.random() * cells.length)];
+      randomCell.classList.add('glitch-effect');
+      setTimeout(() => {
+        randomCell.classList.remove('glitch-effect');
+      }, 500);
+    }, 3000);
+
+    // Add hover effect to product images (including in new section)
+    document.querySelectorAll('.product-img, .product-card img').forEach(img => {
+      img.addEventListener('mouseenter', () => {
+        img.style.filter = 'brightness(1.2)';
+      });
+      img.addEventListener('mouseleave', () => {
+        img.style.filter = 'brightness(1)';
+      });
+    });
+
+    // Buy button functionality (placeholder)
+    document.querySelectorAll('.buy-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        alert('Coming soon: Secure checkout!');
+      });
+    });
+  </script>
+
+</body>
+</html>
+<style> 
+
+  :root {
+  --neon-red: #ff0a54;
+  --blood-red: #f9f8f8;
+  --cyber-black: #0d0d12;
+  --cyber-gray: #1a1a25;
+  --cyber-blue: #050505;
+  --grid-line: rgba(0, 245, 255, 0.1);
+  --bento-glow: rgba(255, 10, 84, 0.3);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--cyber-black);
+  color: #fff;
+  font-family: 'Share Tech Mono', monospace;
+  line-height: 1.6;
+  overflow-x: hidden;
+  background-image: 
+    linear-gradient(var(--grid-line) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid-line) 1px, transparent 1px);
+  background-size: 30px 30px;
+}
+
+header {
+  background: linear-gradient(90deg, var(--cyber-black), var(--blood-red), var(--cyber-black));
+  color: var(--neon-red);
+  padding: 20px;
+  text-align: center;
+  font-size: clamp(1.8rem, 5vw, 3.5rem);
+  letter-spacing: 5px;
+  font-family: 'Syncopate', sans-serif;
+  text-shadow: 0 0 10px var(--neon-red), 0 0 20px var(--neon-red);
+  border-bottom: 3px solid var(--cyber-blue);
+  position: relative;
+  overflow: hidden;
+}
+
+header::before {
+  content: "TECHNO X COUTURE";
+  position: absolute;
+  bottom: 5px;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  font-size: 0.6rem;
+  color: var(--cyber-blue);
+  opacity: 0.7;
+  letter-spacing: 3px;
+  font-family: 'Major Mono Display', monospace;
+}
+
+.menu-toggle {
+  display: none;
+  cursor: pointer;
+  padding: 10px;
+  position: absolute;
+  left: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 100;
+}
+
+.bar {
+  width: 25px;
+  height: 2px;
+  background-color: var(--neon-red);
+  margin: 6px 0;
+  transition: 0.4s;
+  box-shadow: 0 0 5px var(--neon-red);
+}
+
+nav {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 15px;
+  background: var(--cyber-gray);
+  padding: 15px;
+  font-size: clamp(0.9rem, 3vw, 1.1rem);
+  border-bottom: 1px solid var(--cyber-blue);
+  font-family: 'Orbitron', sans-serif;
+}
+
+nav a {
+  color: var(--cyber-blue);
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: 0.3s;
+  padding: 5px 15px;
+  position: relative;
+  letter-spacing: 1px;
+}
+
+nav a:hover {
+  color: var(--neon-red);
+  text-shadow: 0 0 8px var(--neon-red);
+}
+
+nav a::after {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--neon-red);
+  transition: width 0.3s;
+}
+
+nav a:hover::after {
+  width: 100%;
+}
+
+.bento-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: auto;
+  gap: 15px;
+  padding: 20px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.bento-cell {
+  background: var(--cyber-gray);
+  border: 1px solid var(--cyber-blue);
+  border-radius: 5px;
+  padding: 20px;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s, box-shadow 0.3s;
+  box-shadow: 0 0 15px rgba(0, 245, 255, 0.1);
+}
+
+.bento-cell::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, transparent 0%, var(--bento-glow) 100%);
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.bento-cell:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 25px rgba(255, 10, 84, 0.3);
+}
+
+.bento-cell:hover::before {
+  opacity: 1;
+}
+
+.cell-1 {
+  position: relative;
+  grid-column: span 2;
+  grid-row: span 2;
+  min-height: 400px;
+  display: flex;
+  align-items: flex-end;
+  overflow: hidden;
+}
+
+/* Video as background */
+.cell-1 video.bg-video {
+  position: absolute;
+  top: 0; left: 0; width: 100%; height: 100%;
+  object-fit: cover;
+  z-index: 1;
+}
+
+/* Gradient overlay */
+.cell-1::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; width: 100%; height: 100%;
+  background: linear-gradient(rgba(13, 13, 18, 0.8), rgba(138, 3, 3, 0.7));
+  z-index: 2;
+}
+
+/* Content inside cell-1 */
+.cell-1 > *:not(video) {
+  position: relative;
+  z-index: 3;
+}
+
+.cell-2 {
+  grid-column: span 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.cell-3, .cell-4, .cell-5 {
+  min-height: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.cell-6 {
+  grid-column: span 2;
+  min-height: 250px;
+}
+
+.cell-7 {
+  grid-column: span 2;
+  min-height: 250px;
+}
+
+.bento-title {
+  font-family: 'Major Mono Display', monospace;
+  font-size: clamp(1rem, 2vw, 1.5rem);
+  color: var(--cyber-blue);
+  margin-bottom: 15px;
+  text-shadow: 0 0 5px var(--cyber-blue);
+}
+
+.bento-text {
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: #fff;
+}
+
+.hero-text {
+  font-family: 'Syncopate', sans-serif;
+  font-size: clamp(2rem, 5vw, 4rem);
+  color: var(--neon-red);
+  text-shadow: 0 0 10px var(--neon-red);
+  padding: 20px;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+}
+
+.product-img {
+  width: 100%;
+  height: 120px;
+  object-fit: cover;
+  margin-bottom: 15px;
+  border: 1px solid var(--cyber-blue);
+  transition: transform 0.3s;
+}
+
+.bento-cell:hover .product-img {
+  transform: scale(1.05);
+}
+
+.product-title {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 1rem;
+  color: var(--neon-red);
+  margin-bottom: 5px;
+}
+
+.product-price {
+  font-size: 0.8rem;
+  color: var(--cyber-blue);
+}
+
+.collection-highlight {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.collection-item {
+  text-align: center;
+  padding: 10px;
+}
+
+.collection-label {
+  font-size: 0.6rem;
+  color: var(--cyber-blue);
+  margin-top: 5px;
+  text-transform: uppercase;
+}
+
+footer {
+  text-align: center;
+  padding: 30px 20px;
+  font-size: 0.9rem;
+  background: var(--cyber-gray);
+  color: var(--cyber-blue);
+  border-top: 1px solid var(--cyber-blue);
+  font-family: 'Share Tech Mono', monospace;
+  margin-top: 40px;
+}
+
+.social-links {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.social-links a {
+  color: var(--cyber-blue);
+  font-size: 1.5rem;
+  transition: color 0.3s, text-shadow 0.3s;
+}
+
+.social-links a:hover {
+  color: var(--neon-red);
+  text-shadow: 0 0 10px var(--neon-red);
+}
+
+.corner-decoration {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border-color: var(--cyber-blue);
+  border-style: solid;
+  border-width: 0;
+}
+
+.top-left {
+  top: 0;
+  left: 0;
+  border-top-width: 2px;
+  border-left-width: 2px;
+}
+
+.top-right {
+  top: 0;
+  right: 0;
+  border-top-width: 2px;
+  border-right-width: 2px;
+}
+
+.bottom-left {
+  bottom: 0;
+  left: 0;
+  border-bottom-width: 2px;
+  border-left-width: 2px;
+}
+
+.bottom-right {
+  bottom: 0;
+  right: 0;
+  border-bottom-width: 2px;
+  border-right-width: 2px;
+}
+
+/* Glitch effect */
+.glitch {
+  position: relative;
+}
+
+.glitch::before, .glitch::after {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.8;
+  pointer-events: none;
+}
+
+.glitch::before {
+  color: var(--cyber-blue);
+  z-index: -1;
+  animation: glitch-effect 3s infinite;
+}
+
+.glitch::after {
+  color: var(--neon-red);
+  z-index: -2;
+  animation: glitch-effect 2s infinite reverse;
+}
+
+@keyframes glitch-effect {
+  0% { transform: translate(0); }
+  20% { transform: translate(-3px, 3px); }
+  40% { transform: translate(-3px, -3px); }
+  60% { transform: translate(3px, 3px); }
+  80% { transform: translate(3px, -3px); }
+  100% { transform: translate(0); }
+}
+
+/* --- New Collection Section --- */
+.collection-section {
+  background: var(--cyber-black);
+  border-top: 2px solid var(--cyber-blue);
+  border-bottom: 2px solid var(--cyber-blue);
+  padding: 50px 0 60px 0;
+  margin: 40px 0 0 0;
+}
+
+.collection-section h2 {
+  text-align: center;
+  color: var(--neon-red);
+  font-family: 'Syncopate', sans-serif;
+  font-size: 2.5rem;
+  margin-bottom: 30px;
+  letter-spacing: 3px;
+  text-shadow: 0 0 12px var(--neon-red);
+}
+
+.products-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+  gap: 32px;
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.product-card {
+  background: var(--cyber-gray);
+  border: 1px solid var(--cyber-blue);
+  border-radius: 8px;
+  box-shadow: 0 2px 12px rgba(0,245,255,0.08);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 26px 20px 18px 20px;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.22s, box-shadow 0.22s;
+}
+
+.product-card:hover {
+  transform: translateY(-7px) scale(1.03);
+  box-shadow: 0 8px 32px rgba(255, 10, 84, 0.22);
+}
+
+.product-card .corner-decoration {
+  width: 16px;
+  height: 16px;
+}
+
+.product-card img {
+  width: 100%;
+  max-width: 210px;
+  max-height: 210px;
+  object-fit: cover;
+  margin-bottom: 18px;
+  border: 1px solid var(--cyber-blue);
+  border-radius: 3px;
+  background: #0d0d12;
+  transition: filter 0.3s;
+}
+
+.product-card .product-title {
+  font-family: 'Orbitron', sans-serif;
+  color: var(--neon-red);
+  font-size: 1.1rem;
+  margin-bottom: 6px;
+  text-align: center;
+}
+
+.product-card .product-desc {
+  color: #fff;
+  font-size: 0.98rem;
+  margin-bottom: 16px;
+  text-align: center;
+  min-height: 48px;
+}
+
+.product-card .product-price {
+  color: var(--cyber-blue);
+  font-size: 1rem;
+  font-weight: bold;
+  margin-bottom: 18px;
+  text-shadow: 0 0 5px var(--cyber-blue);
+}
+
+.product-card .buy-btn {
+  background: linear-gradient(90deg, var(--neon-red), var(--cyber-blue));
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 10px 32px;
+  font-family: 'Syncopate', sans-serif;
+  font-size: 1rem;
+  letter-spacing: 2px;
+  cursor: pointer;
+  transition: background 0.2s, box-shadow 0.25s;
+  text-shadow: 0 0 6px var(--neon-red);
+  box-shadow: 0 0 9px rgba(255, 10, 84, 0.3);
+}
+
+.product-card .buy-btn:hover {
+  background: linear-gradient(90deg, var(--cyber-blue), var(--neon-red));
+  color: #fff;
+  box-shadow: 0 0 20px var(--neon-red), 0 0 12px var(--cyber-blue);
+  text-shadow: 0 0 12px var(--cyber-blue);
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+  .bento-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .cell-1, .cell-2, .cell-6, .cell-7 {
+    grid-column: span 2;
+  }
+}
+
+@media (max-width: 768px) {
+  nav {
+    flex-direction: column;
+    align-items: center;
+    display: none;
+  }
+
+  nav.active {
+    display: flex;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  .bento-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .cell-1, .cell-2, .cell-3, .cell-4, .cell-5, .cell-6, .cell-7 {
+    grid-column: span 1;
+  }
+
+  .hero-text {
+    font-size: clamp(1.8rem, 8vw, 3rem);
+  }
+}
+
+@media (max-width: 700px) {
+  .collection-section h2 {
+    font-size: 1.6rem;
+  }
+  .products-list {
+    padding: 0 6px;
+    gap: 18px;
+  }
+  .product-card {
+    padding: 17px 7px 11px 7px;
+  }
+}
+</style>

@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TXC | About Us</title>
+  <link rel="icon" type="image/png" href="P (2).jpeg">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Major+Mono+Display&family=Share+Tech+Mono&family=Syncopate:wght@700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --neon-red: #ff0a54;
+      --blood-red: #f9f8f8;
+      --cyber-black: #0d0d12;
+      --cyber-gray: #1a1a25;
+      --cyber-blue: #050505;
+      --grid-line: rgba(0, 245, 255, 0.1);
+      --bento-glow: rgba(255, 10, 84, 0.3);
+    }
+
+    .about-hero {
+      position: relative;
+      height: 60vh;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-bottom: 2px solid var(--cyber-blue);
+    }
+
+    .about-hero::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(rgba(13, 13, 18, 0.8), rgba(138, 3, 3, 0.7));
+      z-index: 1;
+    }
+
+    .about-hero video {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: 0;
+    }
+
+    .about-hero h1 {
+      position: relative;
+      z-index: 2;
+      font-family: 'Syncopate', sans-serif;
+      font-size: clamp(2rem, 8vw, 4rem);
+      color: var(--neon-red);
+      text-shadow: 0 0 15px var(--neon-red);
+      letter-spacing: 5px;
+      text-transform: uppercase;
+    }
+
+    .about-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 60px 20px;
+    }
+
+    .about-section {
+      margin-bottom: 60px;
+      position: relative;
+    }
+
+    .about-section h2 {
+      font-family: 'Syncopate', sans-serif;
+      color: var(--neon-red);
+      font-size: 2rem;
+      margin-bottom: 30px;
+      letter-spacing: 3px;
+      text-shadow: 0 0 10px var(--neon-red);
+    }
+
+    .about-section p {
+      color: #fff;
+      font-size: 1.1rem;
+      line-height: 1.8;
+      margin-bottom: 20px;
+    }
+
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+      margin-top: 40px;
+    }
+
+    .team-member {
+      background: var(--cyber-gray);
+      border: 1px solid var(--cyber-blue);
+      padding: 25px;
+      text-align: center;
+      position: relative;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .team-member:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 10px 30px rgba(255, 10, 84, 0.2);
+    }
+
+    .team-member img {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 2px solid var(--cyber-blue);
+      margin-bottom: 20px;
+      filter: grayscale(30%);
+      transition: filter 0.3s;
+    }
+
+    .team-member:hover img {
+      filter: grayscale(0%);
+    }
+
+    .team-member h3 {
+      font-family: 'Orbitron', sans-serif;
+      color: var(--neon-red);
+      margin-bottom: 10px;
+      font-size: 1.3rem;
+    }
+
+    .team-member p {
+      color: var(--cyber-blue);
+      font-size: 0.9rem;
+      margin-bottom: 15px;
+    }
+
+    .values-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+      margin-top: 40px;
+    }
+
+    .value-card {
+      background: var(--cyber-gray);
+      border: 1px solid var(--cyber-blue);
+      padding: 30px;
+      position: relative;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .value-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 5px 25px rgba(0, 245, 255, 0.2);
+    }
+
+    .value-card h3 {
+      font-family: 'Orbitron', sans-serif;
+      color: var(--cyber-blue);
+      font-size: 1.5rem;
+      margin-bottom: 15px;
+      display: flex;
+      align-items: center;
+    }
+
+    .value-card h3::before {
+      content: "⏵";
+      color: var(--neon-red);
+      margin-right: 10px;
+      font-size: 1.2rem;
+    }
+
+    .corner-decoration {
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      border-color: var(--cyber-blue);
+      border-style: solid;
+      border-width: 0;
+    }
+
+    .top-left {
+      top: 0;
+      left: 0;
+      border-top-width: 2px;
+      border-left-width: 2px;
+    }
+
+    .top-right {
+      top: 0;
+      right: 0;
+      border-top-width: 2px;
+      border-right-width: 2px;
+    }
+
+    .bottom-left {
+      bottom: 0;
+      left: 0;
+      border-bottom-width: 2px;
+      border-left-width: 2px;
+    }
+
+    .bottom-right {
+      bottom: 0;
+      right: 0;
+      border-bottom-width: 2px;
+      border-right-width: 2px;
+    }
+
+    @media (max-width: 768px) {
+      .about-hero {
+        height: 50vh;
+      }
+      
+      .team-grid, .values-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="glitch" data-text="TXC">
+    <div class="menu-toggle" id="mobile-menu">
+      <div class="bar"></div>
+      <div class="bar"></div>
+      <div class="bar"></div>
+    </div>
+    TXC
+  </header>
+
+  <nav id="main-nav">
+    <a href="Index.html">HOME</a>
+    <a href="collection.html">COLLECTIONS</a>
+    <a href="collection.html">SHOP</a>
+   
+    <a href="about.html">ABOUT</a>
+    <a href="contact.html">Contact Us </a>
+  </nav>
+
+  <section class="about-hero">
+    <video autoplay loop muted playsinline>
+      <source src="Z.mp4" type="video/mp4">
+    </video>
+   
+    <div class="corner-decoration top-left"></div>
+    <div class="corner-decoration top-right"></div>
+    <div class="corner-decoration bottom-left"></div>
+    <div class="corner-decoration bottom-right"></div>
+  </section>
+
+  <div class="about-content">
+    <section class="about-section">
+      <h2>ABOUT TXC</h2>
+      
+      <p>At TXC, we live and breathe street culture. Our store was founded by a collective of
+         sneakerheads, creators, and style enthusiasts who believe that fashion is more than just
+          clothing—it's a statement, an attitude, and a lifestyle. We curate the freshest drops, 
+          exclusive collaborations, and timeless staples 
+        from the world’s most sought-after streetwear brands, as well as up-and-coming local labels. </p>
+    </section>
+
+    <section class="about-section">
+      <h2>OUR MISSION</h2>
+      <p>TXC is dedicated to empowering individuality and creative self-expression. We strive to provide our community with the latest trends, high-quality apparel, and a seamless shopping experience. Whether you’re chasing the next big thing or building your own signature look, our diverse collection has something for every taste and vibe. </p>
+     
+    </section>
+
+   
+   
+  </div>
+
+  <footer>
+    <p>© 2025 TXC | STYLE X CULTURE</p>
+    <p>ALL SYSTEMS OPERATIONAL</p>
+    <div class="social-links">
+      <a href="#">⏵</a>
+      <a href="#">⏷</a>
+      <a href="#">⏶</a>
+      <a href="#">⏴</a>
+    </div>
+  </footer>
+
+  <script>
+    // Mobile menu toggle
+    const menuToggle = document.getElementById('mobile-menu');
+    const nav = document.getElementById('main-nav');
+
+    menuToggle.addEventListener('click', () => {
+      nav.classList.toggle('active');
+      menuToggle.classList.toggle('active');
+    });
+
+    // Add glitch effect to team members randomly
+    const teamMembers = document.querySelectorAll('.team-member');
+    setInterval(() => {
+      const randomMember = teamMembers[Math.floor(Math.random() * teamMembers.length)];
+      randomMember.classList.add('glitch-effect');
+      setTimeout(() => {
+        randomMember.classList.remove('glitch-effect');
+      }, 500);
+    }, 3000);
+
+    // Add hover effect to value cards
+    document.querySelectorAll('.value-card').forEach(card => {
+      card.addEventListener('mouseenter', () => {
+        card.querySelector('h3').style.color = 'var(--neon-red)';
+      });
+      card.addEventListener('mouseleave', () => {
+        card.querySelector('h3').style.color = 'var(--cyber-blue)';
+      });
+    });
+  </script>
+
+  <style>
+    /* Base styles from homepage */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: var(--cyber-black);
+      color: #fff;
+      font-family: 'Share Tech Mono', monospace;
+      line-height: 1.6;
+      overflow-x: hidden;
+      background-image: 
+        linear-gradient(var(--grid-line) 1px, transparent 1px),
+        linear-gradient(90deg, var(--grid-line) 1px, transparent 1px);
+      background-size: 30px 30px;
+    }
+
+    header {
+      background: linear-gradient(90deg, var(--cyber-black), var(--blood-red), var(--cyber-black));
+      color: var(--neon-red);
+      padding: 20px;
+      text-align: center;
+      font-size: clamp(1.8rem, 5vw, 3.5rem);
+      letter-spacing: 5px;
+      font-family: 'Syncopate', sans-serif;
+      text-shadow: 0 0 10px var(--neon-red), 0 0 20px var(--neon-red);
+      border-bottom: 3px solid var(--cyber-blue);
+      position: relative;
+      overflow: hidden;
+    }
+
+    header::before {
+      content: "TECHNO X COUTURE";
+      position: absolute;
+      bottom: 5px;
+      left: 0;
+      width: 100%;
+      text-align: center;
+      font-size: 0.6rem;
+      color: var(--cyber-blue);
+      opacity: 0.7;
+      letter-spacing: 3px;
+      font-family: 'Major Mono Display', monospace;
+    }
+
+    .menu-toggle {
+      display: none;
+      cursor: pointer;
+      padding: 10px;
+      position: absolute;
+      left: 20px;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 100;
+    }
+
+    .bar {
+      width: 25px;
+      height: 2px;
+      background-color: var(--neon-red);
+      margin: 6px 0;
+      transition: 0.4s;
+      box-shadow: 0 0 5px var(--neon-red);
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 15px;
+      background: var(--cyber-gray);
+      padding: 15px;
+      font-size: clamp(0.9rem, 3vw, 1.1rem);
+      border-bottom: 1px solid var(--cyber-blue);
+      font-family: 'Orbitron', sans-serif;
+    }
+
+    nav a {
+      color: var(--cyber-blue);
+      text-decoration: none;
+      text-transform: uppercase;
+      transition: 0.3s;
+      padding: 5px 15px;
+      position: relative;
+      letter-spacing: 1px;
+    }
+
+    nav a:hover {
+      color: var(--neon-red);
+      text-shadow: 0 0 8px var(--neon-red);
+    }
+
+    nav a::after {
+      content: "";
+      position: absolute;
+      bottom: -5px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: var(--neon-red);
+      transition: width 0.3s;
+    }
+
+    nav a:hover::after {
+      width: 100%;
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px 20px;
+      font-size: 0.9rem;
+      background: var(--cyber-gray);
+      color: var(--cyber-blue);
+      border-top: 1px solid var(--cyber-blue);
+      font-family: 'Share Tech Mono', monospace;
+      margin-top: 40px;
+    }
+
+    .social-links {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      margin-top: 20px;
+    }
+
+    .social-links a {
+      color: var(--cyber-blue);
+      font-size: 1.5rem;
+      transition: color 0.3s, text-shadow 0.3s;
+    }
+
+    .social-links a:hover {
+      color: var(--neon-red);
+      text-shadow: 0 0 10px var(--neon-red);
+    }
+
+    /* Glitch effect */
+    .glitch {
+      position: relative;
+    }
+
+    .glitch::before, .glitch::after {
+      content: attr(data-text);
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      opacity: 0.8;
+      pointer-events: none;
+    }
+
+    .glitch::before {
+      color: var(--cyber-blue);
+      z-index: -1;
+      animation: glitch-effect 3s infinite;
+    }
+
+    .glitch::after {
+      color: var(--neon-red);
+      z-index: -2;
+      animation: glitch-effect 2s infinite reverse;
+    }
+
+    @keyframes glitch-effect {
+      0% { transform: translate(0); }
+      20% { transform: translate(-3px, 3px); }
+      40% { transform: translate(-3px, -3px); }
+      60% { transform: translate(3px, 3px); }
+      80% { transform: translate(3px, -3px); }
+      100% { transform: translate(0); }
+    }
+
+    .glitch-effect {
+      position: relative;
+    }
+
+    .glitch-effect::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(45deg, transparent 45%, var(--neon-red) 45%, var(--neon-red) 55%, transparent 55%);
+      background-size: 3px 3px;
+      opacity: 0.3;
+      pointer-events: none;
+      animation: glitch-bg 0.5s linear infinite;
+    }
+
+    @keyframes glitch-bg {
+      0% { background-position: 0 0; }
+      100% { background-position: 3px 3px; }
+    }
+
+    @media (max-width: 768px) {
+      nav {
+        flex-direction: column;
+        align-items: center;
+        display: none;
+      }
+
+      nav.active {
+        display: flex;
+      }
+
+      .menu-toggle {
+        display: block;
+      }
+
+      .about-hero h1 {
+        font-size: 2.5rem;
+      }
+    }
+  </style>
+</body>
+</html>
